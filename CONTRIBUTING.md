@@ -10,7 +10,7 @@
 
 * `yarn run start:test` will run the tests on every change.
 
-* `yarn run test` will run the tests and produce a coverage report in `coverage/`.
+* `yarn test` will run the tests and produce a coverage report in `coverage/`.
 
 ## Demo Development Server
 

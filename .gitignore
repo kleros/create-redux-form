@@ -4,10 +4,10 @@
 /node_modules/
 
 # Testing
-/demo/dist
 /coverage
 
 # Production
+/demo/dist
 /es
 /lib
 /umd
