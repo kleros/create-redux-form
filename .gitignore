@@ -1,0 +1,17 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# Dependencies
+/node_modules/
+
+# Testing
+/demo/dist
+/coverage
+
+# Production
+/es
+/lib
+/umd
+
+# Logs
+/npm-debug.log*
+/yarn-error.log*

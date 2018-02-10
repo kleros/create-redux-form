@@ -1,0 +1,94 @@
+{
+  "name": "create-redux-form",
+  "version": "0.0.1",
+  "description":
+    "A lightweight schema constructor for redux-form with a configurable UI-Kit.",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": ["es", "lib"],
+  "scripts": {
+    "prettify":
+      "prettier --config ./.prettierrc --write \"./*.{js,json}\" \"./{src,demo/src,tests}/**/*.{js,json}\"",
+    "lint": "eslint \"./*.js\" \"./{src,demo/src,tests}/**/*.js\"",
+    "lint:fix": "eslint --fix \"./*.js\" \"./{src,demo/src,tests}/**/*.js\"",
+    "start:test": "nwb test-react --server",
+    "test": "nwb test-react --coverage",
+    "test:coveralls": "coveralls < ./coverage/lcov.info",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged && yarn run lint && yarn test",
+    "cz": "git-cz",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "start": "nwb serve-react-demo",
+    "build": "nwb build-react-component"
+  },
+  "lint-staged": {
+    "*.{js,json}": ["prettier --config ./.prettierrc --write", "git add"]
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-addons-css-transition-group": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-redux": "^5.0.6",
+    "redux-form": "^7.2.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.0",
+    "@commitlint/config-conventional": "^6.1.0",
+    "@commitlint/prompt": "^6.1.0",
+    "babel-eslint": "^7.2.3",
+    "commitizen": "^2.9.6",
+    "coveralls": "^3.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.17.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-jsx": "^4.0.2",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-unicorn": "^3.0.1",
+    "expect": "^22.2.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "nwb": "0.21.x",
+    "prettier": "^1.10.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.3",
+    "standard-version": "^4.3.0"
+  },
+  "author": "Kleros",
+  "license": "MIT",
+  "repository": "https://github.com/kleros/create-redux-form",
+  "keywords": [
+    "form",
+    "schema",
+    "decorator",
+    "react",
+    "reactjs",
+    "react-component",
+    "flux",
+    "redux",
+    "react-redux",
+    "redux-form"
+  ]
+}
