@@ -1,8 +1,8 @@
 /**
  * Maps object into an array.
  * @param {object} obj - The obj to map over.
- * @param {object} func - The function to call with (value, key).
- * @returns {any[]|object} - An array with the results of calling func on every property of obj.
+ * @param {function} func - The function to call with (value, key).
+ * @returns {any[]} - An array with the results of calling func on every property of obj.
  */
 export function objMap(obj, func) {
   const keys = Object.keys(obj)

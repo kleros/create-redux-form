@@ -7,10 +7,10 @@ import { visibleIf, validateIf } from './conditional-rendering'
 
 /**
  * Generate fields for a `redux-form` from a schema.
- * @param {{UIKit: object, store: object}} - An object with a map of field types to react components and the redux store.
+ * @param {{ UIKit: object, store: object }} UIKitAndStore - An object with a map of field types to react components and the redux store.
  * @param {string} formName - The name of the form.
  * @param {object} schema  - The schema to use.
- * @returns {array} - An array of field react elements.
+ * @returns {object[]} - An array of field react elements.
  */
 export default function createFields({ UIKit, store }, formName, schema) {
   return objMap(schema, (rawField, fieldKey) => {

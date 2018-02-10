@@ -2,7 +2,7 @@ import form from './form'
 import wizardForm from './wizard-form'
 
 /**
- * Creates a form generator function that uses the passed in UIKit to render fields.
+ * Creates a form generator function that uses the passed in UI-Kit to render fields.
  * @param {object} UIKit - A map of field types to react components.
  * @param {object} store - The redux store.
  * @returns {{ form: function, wizardForm: function }} - An object with a form generator function and a wizard form generator function.
