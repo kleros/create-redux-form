@@ -8,8 +8,6 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "jsx-a11y/href-no-hash": "off",
-
     "arrow-body-style": [2, "as-needed"],
 
     "unicorn/no-fn-reference-in-iterator": 0,
