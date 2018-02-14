@@ -3,13 +3,6 @@
   "version": "0.0.1",
   "description":
     "A lightweight schema constructor for redux-form with a configurable UI-Kit.",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "files": ["es", "lib"],
-  "repository": "https://github.com/kleros/create-redux-form",
-  "author": "Kleros",
-  "license": "MIT",
-  "private": false,
   "keywords": [
     "form",
     "schema",
@@ -17,11 +10,17 @@
     "react",
     "reactjs",
     "react-component",
-    "flux",
     "redux",
     "react-redux",
     "redux-form"
   ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": ["es", "lib"],
+  "repository": "https://github.com/kleros/create-redux-form",
+  "author": "Kleros",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "prettify": "kleros-js-scripts prettify",
     "lint": "kleros-js-scripts lint",
