@@ -24,7 +24,7 @@ export function objMap(obj, func) {
 export function camelToTitleCase(str) {
   return str.replace(
     /(^[a-z])|([a-z][A-Z])|([A-Z][a-z])/g,
-    (m, p1, p2, p3) =>
+    (_m, p1, p2, p3) =>
       p1 ? p1.toUpperCase() : p2 ? p2[0] + ' ' + p2[1] : ' ' + p3
   )
 }

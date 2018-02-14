@@ -54,7 +54,7 @@
     "eslint-plugin-react": "^7.6.1",
     "expect": "^22.2.2",
     "husky": "^0.14.3",
-    "kleros-js-scripts": "^0.1.2",
+    "kleros-js-scripts": "^0.3.2",
     "nwb": "0.21.x",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

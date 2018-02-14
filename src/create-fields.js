@@ -12,7 +12,7 @@ import { visibleIf, validateIf } from './conditional-rendering'
  * @param {object} schema  - The schema to use.
  * @returns {object[]} - An array of field react elements.
  */
-export default function createFields({ UIKit, store }, formName, schema) {
+export default function createFields({ UIKit }, formName, schema) {
   return objMap(schema, (rawField, fieldKey) => {
     const name = camelToTitleCase(fieldKey)
     const field = {

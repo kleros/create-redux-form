@@ -95,10 +95,10 @@ export default function wizardForm(
 
     render() {
       const {
-        onSubmit,
-        destroy,
-        onPageChange,
-        backHandlerRef,
+        onSubmit: _onSubmit,
+        destroy: _destroy,
+        onPageChange: _onPageChange,
+        backHandlerRef: _backHandlerRef,
         className,
         disabled,
         ...rest
@@ -115,9 +115,9 @@ export default function wizardForm(
           >
             <div key={key} style={{ position: 'relative' }}>
               <Form
-                {...rest}
                 disabled={disabled}
                 onSubmit={this.handleSubmit}
+                {...rest}
               />
             </div>
           </ReactCSSTransitionGroup>

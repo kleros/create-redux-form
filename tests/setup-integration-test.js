@@ -29,7 +29,7 @@ export default function setupIntegrationTest(initialState = {}) {
   const store = createStore(
     combineReducers({ form: formReducer }),
     initialState,
-    applyMiddleware(store => next => action => {
+    applyMiddleware(_store => next => action => {
       dispatchSpy(action)
       return next(action)
     })
