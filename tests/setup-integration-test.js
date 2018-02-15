@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
 
 // Create Redux Form
-import createFormGenerator from '../src'
+import createReduxForm from '../src'
 
 // Mock Component
 const MockComponent = () => <div />
@@ -37,7 +37,7 @@ export default function setupIntegrationTest(initialState = {}) {
   const mountTest = element =>
     mount(<Provider store={store}>{element}</Provider>)
 
-  const { form, wizardForm } = createFormGenerator(
+  const { form, wizardForm } = createReduxForm(
     {
       header: MockComponent,
       info: MockComponent,

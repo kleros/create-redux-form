@@ -9,20 +9,15 @@ import form from './form'
 
 /**
  * Generate a redux wizard form from a schema.
- * @param {object} UIKitAndStore - An object with a map of field types to react components and the redux store.
+ * @param {object} UIKit - A map of field types to react components.
  * @param {string} formName - The name of the form.
  * @param {object} schema  - The schema to use.
  * @param {object} reduxFormOptions - Optional options object for `redux-form`.
  * @returns {object} - The form react element.
  */
-export default function wizardForm(
-  UIKitAndStore,
-  formName,
-  schema,
-  reduxFormOptions
-) {
+export default function wizardForm(UIKit, formName, schema, reduxFormOptions) {
   const pages = objMap(schema, pageSchema =>
-    form(UIKitAndStore, formName, pageSchema, {
+    form(UIKit, formName, pageSchema, {
       ...reduxFormOptions,
       destroyOnUnmount: false,
       forceUnregisterOnUnmount: true
@@ -31,11 +26,10 @@ export default function wizardForm(
   const lastPageIndex = pages.length - 1
 
   class WizardForm extends PureComponent {
+    state = { page: 0 }
+
     constructor(props) {
       super(props)
-      this.state = {
-        page: 0
-      }
 
       const { backHandlerRef } = this.props
       if (backHandlerRef) backHandlerRef(this.previousPage)
@@ -97,9 +91,9 @@ export default function wizardForm(
       const {
         onSubmit: _onSubmit,
         destroy: _destroy,
-        onPageChange: _onPageChange,
         backHandlerRef: _backHandlerRef,
-        className,
+        onPageChange: _onPageChange,
+        wizardFormClassName,
         disabled,
         ...rest
       } = this.props
@@ -107,7 +101,7 @@ export default function wizardForm(
       const key = page
       const { Form } = pages[key]
       return (
-        <div className={className}>
+        <div className={wizardFormClassName}>
           <ReactCSSTransitionGroup
             transitionName="carousel"
             transitionEnterTimeout={800}
@@ -131,26 +125,26 @@ export default function wizardForm(
     onSubmit: PropTypes.func.isRequired,
     destroy: PropTypes.func.isRequired,
 
-    // Handlers
-    onPageChange: PropTypes.func,
-
     // Handler Refs
     backHandlerRef: PropTypes.func,
 
+    // Handlers
+    onPageChange: PropTypes.func,
+
     // Modifiers
-    className: PropTypes.string,
+    wizardFormClassName: PropTypes.string,
     disabled: PropTypes.bool
   }
 
   WizardForm.defaultProps = {
-    // Handlers
-    onPageChange: null,
-
     // Handler Refs
     backHandlerRef: null,
 
+    // Handlers
+    onPageChange: null,
+
     // Modifiers
-    className: '',
+    wizardFormClassName: '',
     disabled: false
   }
 

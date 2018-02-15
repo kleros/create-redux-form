@@ -37,15 +37,6 @@
   "commitlint": {
     "extends": ["@commitlint/config-conventional"]
   },
-  "peerDependencies": {
-    "react": "16.x",
-    "react-redux": "^5.0.6",
-    "redux-form": "^7.2.3"
-  },
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react-addons-css-transition-group": "^15.6.2"
-  },
   "devDependencies": {
     "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
@@ -61,5 +52,14 @@
     "redux": "^3.7.2",
     "redux-form": "^7.2.3",
     "standard-version": "^4.3.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-addons-css-transition-group": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-redux": "^5.0.6",
+    "redux-form": "^7.2.3"
   }
 }

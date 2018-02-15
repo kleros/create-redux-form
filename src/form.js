@@ -6,19 +6,14 @@ import createFields from './create-fields'
 
 /**
  * Generate a redux form from a schema.
- * @param {object} UIKitAndStore - An object with a map of field types to react components and the redux store.
+ * @param {object} UIKit - A map of field types to react components.
  * @param {string} formName - The name of the form.
  * @param {object} schema  - The schema to use.
  * @param {object} reduxFormOptions - Optional options object for `redux-form`.
  * @returns {object} - The form react element.
  */
-export default function form(
-  UIKitAndStore,
-  formName,
-  schema,
-  reduxFormOptions
-) {
-  const fields = createFields(UIKitAndStore, formName, schema)
+export default function form(UIKit, formName, schema, reduxFormOptions) {
+  const fields = createFields(UIKit, formName, schema)
   const Form = ({ formClassName, fieldsClassName, disabled }) => (
     <form className={`Form ${formClassName}`}>
       <fieldset className="Form-fieldset" disabled={disabled}>
