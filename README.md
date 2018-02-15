@@ -18,7 +18,7 @@
 
 [Redux Form](https://github.com/erikras/redux-form) is a great library for creating and managing forms and their state in redux applications. But, it leaves a lot of common boilerplate code up for the user to implement. This library aims to remove this duplication of code while at the same time keeping the ability to define your own custom form components.
 
-## Installing
+## Install
 
 To install, run `yarn add create-redux-form` or `npm install create-redux-form`.
 
@@ -272,7 +272,7 @@ export default FormInfo
 Then, when rendering the form that contains this field, you pass in the value in the `redux-form` `initialValues` prop.
 
 ```js
-<PassPeriodForm
+<SomeForm
   enableReinitialize // Enable this if the value is dynamic, so the form rerenders when it changes
   keepDirtyOnReinitialize // This lets you keep the value of the other fields when the form reinitializes
   initialValues={{
