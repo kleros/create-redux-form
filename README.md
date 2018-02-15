@@ -18,6 +18,10 @@
 
 [Redux Form](https://github.com/erikras/redux-form) is a great library for creating and managing forms and their state in redux applications. But, it leaves a lot of common boilerplate code up for the user to implement. This library aims to remove this duplication of code while at the same time keeping the ability to define your own custom form components.
 
+## Installing
+
+To install, run `yarn add create-redux-form` or `npm install create-redux-form`.
+
 ## Create Your Form Generator
 
 First, you'll need `redux-form` compatible input components. See [Redux Form Field Usage](https://redux-form.com/7.2.3/docs/api/field.md/#usage).
