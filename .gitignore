@@ -10,7 +10,6 @@
 /demo/dist
 /es
 /lib
-/umd
 
 # Logs
 /yarn-debug.log*
