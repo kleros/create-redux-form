@@ -163,8 +163,7 @@ const Component = ({ buyPNKFormIsInvalid, submitBuyPNKForm }) => (
     {/* In addition to these props, you can also pass in any prop that a `redux-form` [form](https://redux-form.com/7.2.3/docs/api/reduxform.md/) takes */}
     <BuyPNKForm
       onSubmit={formData => `We submitted! ${formData}`} // Do what you need to do with the data
-      formClassName="BuyPNKForm"
-      fieldsClassName="BuyPNKForm-fields"
+      className="BuyPNKForm" // Inner `fieldset` will have class name `BuyPNKForm-fieldset` and inner `fields` will have class name `BuyPNKForm-fieldset-fields`
       disabled={false}
     />
     <button onClick={submitBuyPNKForm} disabled={buyPNKFormIsInvalid}>
@@ -223,7 +222,8 @@ class Component extends PureComponent {
           onSubmit={formData => `We submitted! ${formData}`} // Do what you need to do with the data
           backHandlerRef={this.getBackHandlerRef}
           onPageChange={this.handlePageChange}
-          wizardFormClassName="BuyPNKWizardForm"
+          transitionName="someCSSAnimation" // Default is `carousel` and can be imported from the module, i.e. `@import '~create-redux-form/animations/carousel.css';`
+          className="BuyPNKWizardForm" // Inner `Form` will have class name `BuyPNKWizardForm-form`
         />
         {hasPrevPage && <button onClick={this.backHandlerRef}>Go Back</button>}
         <button onClick={submitBuyPNKForm} disabled={buyPNKFormIsInvalid}>

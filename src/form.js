@@ -14,10 +14,24 @@ import createFields from './create-fields'
  */
 export default function form(UIKit, formName, schema, reduxFormOptions) {
   const fields = createFields(UIKit, formName, schema)
-  const Form = ({ formClassName, fieldsClassName, disabled }) => (
-    <form className={`Form ${formClassName}`}>
-      <fieldset className="Form-fieldset" disabled={disabled}>
-        <div className={`Form-fieldset-fields ${fieldsClassName}`}>
+  const Form = ({ className, disabled }) => (
+    <form className={className}>
+      <fieldset
+        className={className && `${className}-fieldset`}
+        style={{
+          border: 'none',
+          margin: '0 10px',
+          padding: '0 30px'
+        }}
+        disabled={disabled}
+      >
+        <div
+          className={className && `${className}-fieldset-fields`}
+          style={{
+            display: 'flex',
+            'flex-flow': 'row wrap'
+          }}
+        >
           {fields}
         </div>
       </fieldset>
@@ -26,15 +40,13 @@ export default function form(UIKit, formName, schema, reduxFormOptions) {
 
   Form.propTypes = {
     // Modifiers
-    formClassName: PropTypes.string,
-    fieldsClassName: PropTypes.string,
+    className: PropTypes.string,
     disabled: PropTypes.bool
   }
 
   Form.defaultProps = {
     // Modifiers
-    formClassName: '',
-    fieldsClassName: '',
+    className: '',
     disabled: false
   }
 

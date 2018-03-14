@@ -93,7 +93,8 @@ export default function wizardForm(UIKit, formName, schema, reduxFormOptions) {
         destroy: _destroy,
         backHandlerRef: _backHandlerRef,
         onPageChange: _onPageChange,
-        wizardFormClassName,
+        transitionName,
+        className,
         disabled,
         ...rest
       } = this.props
@@ -101,14 +102,15 @@ export default function wizardForm(UIKit, formName, schema, reduxFormOptions) {
       const key = page
       const { Form } = pages[key]
       return (
-        <div className={wizardFormClassName}>
+        <div className={className}>
           <ReactCSSTransitionGroup
-            transitionName="carousel"
+            transitionName={transitionName}
             transitionEnterTimeout={800}
             transitionLeave={false}
           >
             <div key={key} style={{ position: 'relative' }}>
               <Form
+                className={className && `${className}-form`}
                 disabled={disabled}
                 onSubmit={this.handleSubmit}
                 {...rest}
@@ -132,7 +134,8 @@ export default function wizardForm(UIKit, formName, schema, reduxFormOptions) {
     onPageChange: PropTypes.func,
 
     // Modifiers
-    wizardFormClassName: PropTypes.string,
+    transitionName: PropTypes.string,
+    className: PropTypes.string,
     disabled: PropTypes.bool
   }
 
@@ -144,7 +147,8 @@ export default function wizardForm(UIKit, formName, schema, reduxFormOptions) {
     onPageChange: null,
 
     // Modifiers
-    wizardFormClassName: '',
+    transitionName: 'carousel',
+    className: '',
     disabled: false
   }
 
