@@ -1,8 +1,7 @@
 {
   "name": "create-redux-form",
-  "version": "0.1.1",
-  "description":
-    "A lightweight schema constructor for redux-form with a configurable UI-Kit.",
+  "version": "0.1.2",
+  "description": "A lightweight schema constructor for redux-form with a configurable UI-Kit.",
   "keywords": [
     "form",
     "schema",
@@ -16,7 +15,11 @@
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
-  "files": ["es", "lib", "animations"],
+  "files": [
+    "es",
+    "lib",
+    "animations"
+  ],
   "repository": "https://github.com/kleros/create-redux-form",
   "author": "Kleros",
   "license": "MIT",
@@ -35,7 +38,9 @@
     "build": "nwb build-react-component"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
