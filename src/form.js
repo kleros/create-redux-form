@@ -29,7 +29,7 @@ export default function form(UIKit, formName, schema, reduxFormOptions) {
           className={className && `${className}-fieldset-fields`}
           style={{
             display: 'flex',
-            'flex-flow': 'row wrap'
+            flexFlow: 'row wrap'
           }}
         >
           {fields}
